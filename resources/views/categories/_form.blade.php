@@ -1,12 +1,12 @@
     <div class="form-group">
-        <label for="idDad">Categoria Padre</label>
-        <select name="idDad" id="idDad" class="form-control" >
+        <label for="dad_id">Categoria Padre</label>
+        <select name="dad_id" id="dad_id" class="form-control" >
             <option value="">Seleccione una Categoria Padre</option>
         @foreach ($categories as $categoria)
-        <option value="{{$categoria->id}}"{{(isset($category->idDad)&&$category->idDad==$categoria->id)?'selected':''}}>{{$categoria->name}}</option>
+        <option value="{{$categoria->id}}"{{(isset($category->dad_id)&&$category->dad_id==$categoria->id)?'selected':''}}>{{$categoria->name}}</option>
         @endforeach
         </select>
-        @error('idDad')
+        @error('dad_id')
         <small class="text-danger">{{$message}}</small>
         @enderror
     </div>

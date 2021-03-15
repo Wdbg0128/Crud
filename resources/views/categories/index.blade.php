@@ -9,7 +9,7 @@ Categorias
             <th>Id</th>
             <th>Nombre</th>
             <th>Descripción</th>
-            <th>IdPadre</th>
+            <th>Categoria Padre</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -20,7 +20,9 @@ Categorias
             <td>{{$category->id}}</td>
             <td>{{$category->name}}</td>
             <td>{{$category->description}}</td>
-            <td>{{$category->idDad}}</td>
+            
+            <td>{{isset($category->dad->name)? $category->dad->name : ''}}</td>
+            
             <td>
                 <a href="{{route('categories.show',$category->id)}}" class="btn btn-info ">Ver</a>
                 <a href="{{route('categories.edit',$category->id)}}" class="btn btn-warning ">Editar</a>

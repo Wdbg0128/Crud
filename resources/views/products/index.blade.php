@@ -22,7 +22,7 @@ Productos
             <td>{{$product->name}}</td>
             <td>{{$product->description}}</td>
             <td>{{$product->units}}</td>
-            <td>{{$product->idCategory}}</td>
+            <td>{{$product->categories->name}}</td>
             <td>
                 <a href="{{route('products.show',$product->id)}}" class="btn btn-info ">Ver</a>
                 <a href="{{route('products.edit',$product->id)}}" class="btn btn-warning ">Editar</a>

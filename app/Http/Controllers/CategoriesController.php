@@ -15,7 +15,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories=Categories::orderBy('name','asc')->paginate(10);
+        $categories=Categories::orderBy('name','asc')->paginate(10); 
         return view('categories.index', compact('categories'));
     }
 
@@ -26,7 +26,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-       $categories=Categories::listCategories();
+       $categories=Categories::get();
        return view('categories.create',['category'=> new Categories ,'categories'=>$categories]);
     }
 
@@ -61,7 +61,7 @@ class CategoriesController extends Controller
      */
     public function edit(Categories $category)
     {
-        $categories=Categories::listCategories();
+        $categories=Categories::get();
         return view('categories.edit',['category' => $category, 'categories'=> $categories]);
     }
 

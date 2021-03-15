@@ -4,11 +4,11 @@ Producto  | {{$product->name}}
 @endsection
 @section('content')
 <div class="form-group">
-    <label for="idCategory">Categoria</label>
-    <select name="idCategory" id="idCategory" class="form-control" disabled >
+    <label for="category_id">Categoria</label>
+    <select name="category_id" id="category_id" class="form-control" disabled >
         <option value="">Seleccione una Categoria</option>
     @foreach ($categories as $category)
-    <option value="{{$category->id}}"{{(isset($product->idCategory)&&$product->idCategory==$category->id)?'selected':''}}>{{$category->name}}</option>
+    <option value="{{$category->id}}"{{(isset($product->category_id)&&$product->category_id==$category->id)?'selected':''}}>{{$category->name}}</option>
     @endforeach
     </select>
 </div>

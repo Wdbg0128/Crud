@@ -24,8 +24,8 @@ class StoreProductPost extends FormRequest
     public function rules()
     {
         return [
-            'idCategory'=>'required',
-            'name'=>'required|unique:categories|max:255|min:5',
+            'category_id'=>'required',
+            'name'=>'required|max:255|min:5',
             'description'=>'nullable',
             'units'=>'required'
         ];

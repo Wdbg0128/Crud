@@ -5,8 +5,8 @@ Categoria  | {{$category->name}}
 @section('content')
         @csrf
         <div class="form-group">
-            <label for="idDad">Categoria Padre</label>
-            <input type="text" name="idDad" id="idDad" class="form-control"value="{{$category->idDad}}" readonly>
+            <label for="dad_id">Categoria Padre</label>
+            <input type="text" name="dad_id" id="dad_id" class="form-control"value="{{$category->dad->name}}" readonly>
         </div>
         <div class="form-group">
             <label for="name">Nombre</label>

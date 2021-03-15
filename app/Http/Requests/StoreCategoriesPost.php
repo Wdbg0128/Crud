@@ -24,8 +24,8 @@ class StoreCategoriesPost extends FormRequest
     public function rules()
     {
         return [
-            'idDad'=>'nullable',
-            'name'=>'required|unique:categories|max:255|min:5',
+            'dad_id'=>'nullable',
+            'name'=>'required|max:255|min:5',
             'description'=>'nullable'
         ];
     }

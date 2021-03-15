@@ -17,7 +17,7 @@ class ProductsController extends Controller
     public function index()
     {
         $products=Products::orderBy('name','asc')->paginate(10);
-        return view('products.index', compact('products'));
+        return view('products.index', ['products'=>$products]);
     }
 
     /**
@@ -27,7 +27,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        $categories=Categories::listCategories();
+        $categories=Categories::get();
        return view('products.create',['product'=> new Products ,'categories'=>$categories]);
 
     }
@@ -52,7 +52,7 @@ class ProductsController extends Controller
      */
     public function show(Products $product)
     {
-        $categories=Categories::listCategories();
+        $categories=Categories::get();
         return view('products.show',compact('product','categories'));
     }
 
@@ -64,7 +64,7 @@ class ProductsController extends Controller
      */
     public function edit(Products $product)
     {
-        $categories=Categories::listCategories();
+        $categories=Categories::get();
         return view('products.edit',['product' => $product, 'categories'=> $categories]);
     }
 
